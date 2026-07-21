@@ -1,0 +1,313 @@
+/* ─── Hero container ─────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 142px); /* 52px utility bar + 90px navbar */
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ─── Background image ───────────────────────── */
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/hero-bg.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+/* ─── Gradient overlay: left dark → right transparent ─── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(0, 0, 0, 0.80) 0%,
+    rgba(0, 0, 0, 0.60) 35%,
+    rgba(0, 0, 0, 0.25) 65%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  z-index: 1;
+}
+
+/* ─── Content block ──────────────────────────── */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  padding: 7px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  width: fit-content;
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4CAF50;
+  animation: pulseGlow 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* Headline */
+.headline {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 22px;
+  max-width: 680px;
+}
+
+.headlineAccent {
+  color: #4CAF50;
+}
+
+/* Sub-headline */
+.sub {
+  font-size: clamp(16px, 2vw, 20px);
+  color: rgba(255, 255, 255, 0.80);
+  max-width: 540px;
+  line-height: 1.65;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+
+/* ─── CTA buttons ────────────────────────────── */
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #4CAF50;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.45);
+}
+
+.ctaPrimary:hover {
+  background: #3d8b40;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(76, 175, 80, 0.5);
+}
+
+.ctaOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.ctaOutline:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* ─── Trust row ──────────────────────────────── */
+.trust {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+/* ─── WhatsApp floating button ───────────────── */
+.whatsapp {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  animation: pulseGlow 2.5s ease-in-out infinite;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsapp:hover {
+  transform: scale(1.10);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
+  animation: none;
+}
+
+.whatsappPulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 3px solid rgba(37, 211, 102, 0.5);
+  animation: pulseRing 2s ease-out infinite;
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0;   }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 6px 20px rgba(76, 175, 80, 0.45); }
+  50%       { box-shadow: 0 6px 30px rgba(76, 175, 80, 0.7); }
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 1023px) {
+  .hero {
+    height: auto;
+    min-height: calc(100svh - 134px);
+    padding: 60px 0;
+  }
+
+  .content {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: calc(100svh - 72px);
+    align-items: center;
+    padding: 48px 0 64px;
+  }
+
+  .bg {
+    background-position: center center;
+  }
+
+  .content {
+    padding: 0 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .badge {
+    justify-content: center;
+  }
+
+  .headline {
+    font-size: clamp(30px, 8vw, 42px);
+    letter-spacing: -0.8px;
+  }
+
+  .sub {
+    font-size: 15.5px;
+  }
+
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .ctaPrimary,
+  .ctaOutline {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  .trust {
+    justify-content: center;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.78) 50%,
+      rgba(0, 0, 0, 0.90) 100%
+    );
+  }
+
+  .whatsapp {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero {
+    min-height: calc(100svh - 72px);
+    padding: 36px 0 48px;
+  }
+
+  .content {
+    padding: 0 16px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .trust {
+    gap: 12px;
+    flex-direction: column;
+  }
+}

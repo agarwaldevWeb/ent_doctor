@@ -1,0 +1,184 @@
+.section {
+  padding: 110px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.subLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4CAF50;
+  letter-spacing: 1.2px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-size: 38px;
+  font-weight: 800;
+  color: #1E2A38;
+  letter-spacing: -0.5px;
+}
+
+.carousel {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  box-shadow: 0 16px 48px rgba(30, 42, 56, 0.08);
+  border: 1px solid rgba(26, 95, 180, 0.08);
+  overflow: hidden;
+}
+
+.watermark {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 120px;
+  font-family: Georgia, serif;
+  color: rgba(76, 175, 80, 0.08);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.rating {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  color: #f59e0b;
+  font-size: 20px;
+}
+
+.text {
+  font-size: 18px;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.authorRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.15);
+  color: #4CAF50;
+  font-weight: 800;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1E2A38;
+}
+
+.location {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  min-width: 44px;
+  min-height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.dot::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  transition: all 0.25s ease;
+}
+
+.dotActive::after {
+  background: #4CAF50;
+  width: 28px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding: 72px 0;
+  }
+  .container {
+    padding: 0 24px;
+  }
+  .heading {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: 36px 24px;
+  }
+  .text {
+    font-size: 16.5px;
+  }
+}
+
+@media (max-width: 479px) {
+  .section {
+    padding: 56px 0;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .card {
+    padding: 28px 18px;
+  }
+  .heading {
+    font-size: 26px;
+  }
+  .text {
+    font-size: 15px;
+  }
+}

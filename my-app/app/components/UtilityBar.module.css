@@ -1,0 +1,115 @@
+.bar {
+  width: 100%;
+  background: #1A5FB4;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  z-index: 100;
+}
+
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.contact:hover {
+  color: #fff;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.socialBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.25s;
+  text-decoration: none;
+}
+
+.socialBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Mobile & Tablet Breakpoints */
+@media (max-width: 1024px) {
+  .bar {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tagline {
+    display: none;
+  }
+
+  .bar {
+    justify-content: space-between;
+    height: 44px;
+    padding: 0 16px;
+  }
+
+  .contact {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .socialBtn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 479px) {
+  .bar {
+    display: none; /* Hide top bar on small mobile to conserve vertical space */
+  }
+}
